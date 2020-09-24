@@ -1,8 +1,6 @@
-const displayPeopleInfoDiv = document.querySelector(".people-details")
+// Globals: people
 
-network.on("click", function(params){
-    console.log("clicked")
-})
+const displayPeopleInfoDiv = document.querySelector(".people-details")
 
 network.on("selectNode", function (params) {
     nodeId = params.nodes[0]
@@ -14,11 +12,9 @@ network.on("selectNode", function (params) {
 });
 
 const displayPeopleInfo = ({displayPeopleInfoDiv, people, nodeId})=>{
-    console.log(nodeId)
-    console.log(displayPeopleInfoDiv)
-    displayPeopleInfoDiv.innerHTML = `
-        <div class="individual-detail">   
-            ${people[nodeId].html}
-        <div>    
-    `
+    displayPeopleInfoDiv.innerHTML = '';
+    const individualDetail = document.createElement('div')
+    individualDetail.classList.add("individual-detail")
+    individualDetail.innerHTML = people[nodeId].html
+    displayPeopleInfoDiv.appendChild(individualDetail)
 }

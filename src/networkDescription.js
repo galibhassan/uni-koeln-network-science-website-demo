@@ -4,7 +4,10 @@ function randX(x) {
 }
 
 // create an array with nodes
-var nodes = new vis.DataSet([
+var nodes = new vis.DataSet();
+
+
+var nodesInfo = [
     {
         id: 0,
         shape: 'circularImage',
@@ -120,10 +123,10 @@ var nodes = new vis.DataSet([
 
 
     },
-]);
+]
+var nodes = new vis.DataSet(nodesInfo);
 
-// create an array with edges
-var edges = new vis.DataSet([
+var edgesInfo = [
     { from: 0, to: 1 },
     { from: 0, to: 2 },
     { from: 0, to: 3 },
@@ -136,20 +139,42 @@ var edges = new vis.DataSet([
     { from: 0, to: 10 },
     { from: 0, to: 11 },
     { from: 0, to: 12 },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
-    { from: randX(12), to: randX(12) },
+    { from: 0, to: 13 },
 
-]);
+    // Philipp
+    { from: 1, to: 2 },
+    { from: 1, to: 5 },
+    { from: 1, to: 3 },
+    { from: 1, to: 4 },
+    { from: 1, to: 10 },
+    { from: 1, to: 6 },
+
+    // franz
+    { from: 3, to: 2 },
+    { from: 3, to: 4 },
+    { from: 3, to: 9 },
+    { from: 3, to: 11 },
+    { from: 3, to: 7 },
+    { from: 3, to: 10 },
+
+    // Johannes
+    { from: 4, to: 5 },
+    { from: 4, to: 6 },
+    { from: 4, to: 10 },
+
+    // Chuck
+    { from: 2, to: 5 },
+    { from: 2, to: 1 },
+    { from: 2, to: 13 },
+
+    // Leo
+    { from: 5, to: 8 },
+    { from: 5, to: 13 },
+
+]
+var edges = new vis.DataSet(edgesInfo);
+
+
 
 // create a network
 var container = document.getElementById('mynetwork');

@@ -24,12 +24,12 @@
             justify-content: center;
             align-items: center;
             background-color: rgb(233, 233, 233);
-            font-family: 'Noto Sans JP', sans-serif; 
+            font-family: monospace;
         }
 
         .container {
-            width: 85%;
-            height: 80vh;
+            width: 95%;
+            height: 96vh;
             border-radius: 10px;
             box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
             background-color: #344045;
@@ -38,13 +38,13 @@
         }
 
         #mynetwork {
-            width: 65%;
+            width: 45%;
             height: 100%;
 
         }
 
         .people-details {
-            width: 35%;
+            width: 55%;
             height: 100%;
             background-color: rgb(247, 247, 247);
             overflow: auto
@@ -52,6 +52,16 @@
 
         .individual-detail {
             padding: 20px
+        }
+
+        .adj-mat-table {
+            font-size: .7rem;
+            /* border: 1px solid black */
+        }
+
+        td {
+            text-align: center;
+            background-color: #e8eff0;
         }
     </style>
 </head>
@@ -61,14 +71,34 @@
         <div id="mynetwork"></div>
         <div class="people-details">
             <div class="individual-detail">
-                <h3>Uni-Koeln Network Science Group</h3>
-                <div>Click on the individuals to see info.</div>
+                <div>
+                    <h3>Adjecency matrix</h3>
+                    <div class="adjecency-matrix"></div>
+                </div>
+                <hr>
+                <div>
+                    <br>
+                    <h3>Global Clustering Coefficient</h3>
+                    <div class="global-clustering-coeff">
+                        
+                    </div>
+                    <br>
+                </div>
+                <hr>
+                <div>
+                    <h3>Local Clustering Coefficients</h3>
+                    <div class="local-clustering-coeff">
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script src="./src/people.js"></script>
     <script src="./src/networkDescription.js"></script>
-    <script src="./src/networkEvents.js"></script>
+    <!--     <script src="./src/networkEvents.js"></script> -->
+    <script src="./src/classes/graph.js"></script>
+    <script src="./src/graphPropertyTests.js"></script>
 </body>
 
 </html>
